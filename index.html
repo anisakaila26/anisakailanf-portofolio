@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anisa Kaila Najmi Fadilah | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--primary:#A8C9E8;
+--primary-dark:#638FB8;
+--primary-deep:#456D91;
+--secondary:#D4E5F3;
+--white:#fff;
+--dark:#354252;
+--gray:#788695;
+--border:#DFE7EF;
+--background:#F6F7F8;
+--card-background:#fff;
+--soft-background:#EDF3F8;
+--blue-pale:#EAF2F8;
+--shadow:0 10px 30px rgba(69,109,145,.09);
+--radius:20px
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Poppins',sans-serif;background:var(--background);color:var(--dark);min-height:100vh;overflow-x:hidden}
+section[id]{scroll-margin-top:100px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+button{font-family:inherit}
+
+/* NAVBAR */
+header{width:100%;position:sticky;top:0;z-index:1000;background:rgba(246,247,248,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+.navbar{width:100%;max-width:1200px;min-height:85px;margin:auto;padding:18px 7%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px;color:var(--primary-deep);white-space:nowrap;transition:.3s}
+.logo:hover{color:var(--primary-dark);transform:translateY(-2px)}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:25px;list-style:none}
+.nav-links a{position:relative;color:var(--primary-deep);font-size:14px;font-weight:600;padding:9px 15px;border-radius:20px;transition:.3s}
+.nav-links a::after{content:"";position:absolute;width:0;height:3px;left:15px;bottom:2px;background:var(--primary-dark);border-radius:10px;transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary-deep);background:#E5EFF7;transform:translateY(-2px)}
+.nav-links a.active{font-weight:700}
+.nav-links a:hover::after,.nav-links a.active::after{width:calc(100% - 30px)}
+
+/* HOME */
+.hero{width:100%;max-width:1200px;min-height:85vh;margin:auto;padding:80px 7%;display:flex;align-items:center;justify-content:space-between;gap:65px;position:relative}
+.hero::before{content:"";position:absolute;width:350px;height:350px;right:5%;top:15%;background:var(--secondary);border-radius:50%;filter:blur(100px);opacity:.4;z-index:-1}
+.hero-content{flex:1;min-width:0}
+.hero h1{font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.25;letter-spacing:-2px;margin-bottom:20px;overflow-wrap:break-word}
+.highlight{color:var(--primary-deep)}
+.hero h2{color:var(--primary-dark);font-size:21px;font-weight:700;margin-bottom:20px}
+.description{max-width:520px;color:var(--gray);font-size:14px;line-height:1.9;margin-bottom:25px}
+.hero-image{flex:1;min-width:0;display:flex;justify-content:center;align-items:center}
+.image-circle{width:340px;height:340px;max-width:100%;padding:10px;background:linear-gradient(135deg,#638FB8,#A8C9E8,#DFEAF4);border-radius:50%;overflow:hidden;box-shadow:0 20px 50px rgba(69,109,145,.2);animation:floating 4s ease-in-out infinite}
+.image-circle img{width:100%;height:100%;object-fit:cover;object-position:center;border:5px solid white;border-radius:50%}
+@keyframes floating{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ABOUT */
+.about-section{width:100%;max-width:1200px;margin:auto;padding:80px 7%;position:relative}
+.about-intro{text-align:center;margin-bottom:45px}
+.about-intro h1{color:var(--dark);font-size:clamp(35px,5vw,55px);font-weight:800;letter-spacing:-2px}
+.about-card{width:100%;max-width:1000px;margin:auto;padding:35px;display:grid;grid-template-columns:260px minmax(0,1fr);align-items:center;gap:35px;background:var(--card-background);border:1px solid var(--border);border-radius:25px;box-shadow:var(--shadow);transition:.3s}
+.about-card:hover{box-shadow:0 15px 40px rgba(69,109,145,.13)}
+.about-left{width:100%;height:300px;display:flex;justify-content:center;align-items:center;background:var(--soft-background);border:3px solid var(--border);border-radius:20px;overflow:hidden}
+.about-left img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:17px}
+.about-right{min-width:0;display:flex;flex-direction:column;justify-content:center}
+.about-right h2{color:var(--primary-deep);font-size:25px;font-weight:800;margin-bottom:15px}
+.about-right p{color:var(--gray);font-size:14px;line-height:1.9;margin-bottom:15px;text-align:justify}
+.experience-title{color:var(--primary-deep);font-size:23px;font-weight:800;margin-top:20px;margin-bottom:12px}
+.experience-columns{width:100%;display:grid;grid-template-columns:1fr;margin-top:5px}
+.experience-column{width:100%;padding:22px;background:#F1F4F7;border:1px solid var(--border);border-left:4px solid var(--primary-dark);border-radius:16px;transition:.3s}
+.experience-column:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--primary)}
+.experience-column p{color:var(--gray);font-size:13px;line-height:1.9;margin:0}
+.experience-column h3{color:var(--primary-deep);font-size:16px;margin-bottom:8px}
+.address-about{display:flex;align-items:flex-start;gap:10px}
+.address-about p{text-align:left}
+
+/* BULLET POINT */
+.bullet-list{
+list-style-type:disc;
+padding-left:22px;
+margin:0;
+color:var(--gray);
+font-size:13px;
+line-height:1.9;
+}
+.bullet-list li{
+padding-left:3px;
+margin-bottom:4px;
+}
+.bullet-list li::marker{
+color:var(--primary-dark);
+font-size:15px;
+}
+
+/* SKILLS */
+.skills-section{width:100%;max-width:1000px;margin:80px auto 0;padding:0}
+.skills-heading{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-bottom:35px}
+.skills-heading h2{color:var(--dark);font-size:clamp(35px,5vw,50px);font-weight:800;letter-spacing:-2px}
+.skills-section>h3{color:var(--primary-deep);font-size:20px;margin:25px 0 18px}
+.skills-list{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.skill-row{width:100%;min-width:0;min-height:90px;padding:20px 25px;display:flex;align-items:center;gap:20px;background:#EDF3F8;border:1px solid var(--border);border-radius:18px;transition:.3s}
+.skill-row:hover{transform:translateY(-5px);background:#E5EFF7;border-color:var(--primary);box-shadow:0 10px 25px rgba(69,109,145,.12)}
+.skill-number{width:45px;height:45px;min-width:45px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#D4E5F3,#EAF2F8);color:var(--primary-deep);border-radius:13px;font-size:15px;font-weight:700;flex-shrink:0}
+.skill-info{flex:1;min-width:0;display:flex;align-items:center}
+.skill-info h3{color:var(--primary-deep);font-size:18px;font-weight:700;margin:0;overflow-wrap:break-word}
+.skills-list .skill-row:nth-child(7){grid-column:1/-1;width:calc((100% - 20px)/2);justify-self:center}
+
+/* PROJECTS */
+.page-section{width:100%;max-width:1200px;min-height:85vh;margin:auto;padding:80px 7%}
+.section-heading{text-align:center;margin-bottom:50px}
+.section-heading h1{color:var(--dark);font-size:clamp(32px,4vw,45px);font-weight:800;letter-spacing:-1px;margin-bottom:15px}
+.section-heading .description{margin:auto}
+.project-container{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.project-card{position:relative;min-width:0;padding:25px;background:var(--card-background);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;transition:.3s}
+.project-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#638FB8,#A8C9E8,#D4E5F3)}
+.project-card:hover{transform:translateY(-7px);border-color:var(--primary);box-shadow:0 18px 40px rgba(69,109,145,.14)}
+.project-image{width:100%;height:190px;overflow:hidden;border-radius:15px;margin-bottom:20px}
+.project-image img{width:100%;height:100%;display:block;object-fit:cover;cursor:zoom-in;transition:transform .4s}
+.project-card:hover .project-image img{transform:scale(1.04)}
+.project-card:first-child .project-image{height:auto}
+.project-card:first-child .project-image img{width:100%;height:auto;object-fit:contain}
+.project-card h2{color:var(--primary-deep);font-size:18px;font-weight:700;margin-bottom:12px}
+.project-card p{color:var(--gray);font-size:13px;line-height:1.9;margin-bottom:5px}
+.project-card .year{color:var(--primary-dark);font-weight:700;margin-bottom:10px}
+.project-card .bullet-list{margin-top:5px}
+
+/* LIGHTBOX */
+.photo-lightbox{display:none;position:fixed;inset:0;z-index:9999;padding:30px;align-items:center;justify-content:center;background:rgba(35,48,62,.9)}
+.photo-lightbox.show{display:flex}
+.photo-lightbox img{max-width:90vw;max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.3);cursor:zoom-out}
+.lightbox-close{position:absolute;top:20px;right:30px;border:none;background:transparent;color:white;font-size:45px;cursor:pointer;transition:.3s}
+.lightbox-close:hover{transform:scale(1.1);color:var(--secondary)}
+
+/* CONTACT */
+.contact-container{width:100%;max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.contact-box{min-width:0;display:flex;flex-direction:column;align-items:center;padding:35px 22px;text-align:center;background:var(--card-background);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);transition:.3s}
+.contact-box:hover{transform:translateY(-7px);border-color:var(--primary);box-shadow:0 18px 40px rgba(69,109,145,.14)}
+.contact-box h3{color:var(--primary-deep);font-size:18px;font-weight:700;margin-bottom:10px}
+.contact-box p{color:var(--gray);font-size:13px;line-height:1.8;margin-bottom:22px;overflow-wrap:anywhere}
+.contact-action{color:var(--primary-dark);font-size:12px;font-weight:700;margin-top:auto;transition:.3s}
+.contact-action:hover{color:var(--primary-deep)}
+
+/* FOOTER */
+footer{width:100%;padding:25px 7%;text-align:center;background:#EAF0F5;border-top:1px solid var(--border)}
+footer p{color:var(--primary-deep);font-size:12px}
+
+/* TABLET */
+@media(max-width:950px){
+.hero{gap:35px}
+.image-circle{width:280px;height:280px}
+.about-card{grid-template-columns:220px minmax(0,1fr);gap:25px;padding:30px}
+.about-left{height:280px}
+.project-container{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* TABLET KECIL */
+@media(max-width:700px){
+.navbar{min-height:70px;padding:15px 5%;gap:10px}
+.logo{font-size:21px}
+.nav-links{gap:5px}
+.nav-links a{font-size:12px;padding:8px}
+.hero{min-height:auto;flex-direction:column-reverse;text-align:center;padding:60px 6%;gap:35px}
+.hero-content{width:100%}
+.hero h1{font-size:38px}
+.description{margin-left:auto;margin-right:auto}
+.image-circle{width:250px;height:250px}
+.about-section,.page-section{padding:65px 5%}
+.about-card{grid-template-columns:1fr;padding:25px}
+.about-left{max-width:260px;height:280px;margin:auto}
+.about-right p{text-align:left}
+.skills-section{padding:0 5px}
+}
+
+/* HP */
+@media(max-width:500px){
+.navbar{flex-direction:column;justify-content:center;gap:10px;padding:13px 10px}
+.logo{font-size:22px}
+.nav-links{width:100%;justify-content:center;gap:3px}
+.nav-links a{font-size:11px;padding:7px 9px}
+.hero{padding:45px 20px}
+.hero h1{font-size:32px;line-height:1.3}
+.hero h2{font-size:17px}
+.description{font-size:13px;line-height:1.8}
+.image-circle{width:210px;height:210px}
+.about-card{padding:18px}
+.about-left{height:240px}
+.about-right h2{font-size:20px}
+.about-right p{font-size:12px}
+.experience-title{font-size:20px}
+.experience-column{padding:17px}
+.skills-heading h2{font-size:32px}
+.skills-list{grid-template-columns:1fr;gap:13px}
+.skills-list .skill-row:nth-child(7){grid-column:auto;width:100%}
+.skill-row{min-height:72px;padding:15px;gap:15px}
+.skill-number{width:38px;height:38px;min-width:38px;font-size:12px}
+.skill-info h3{font-size:15px}
+.project-container{grid-template-columns:1fr}
+.contact-container{grid-template-columns:1fr}
+.project-card{padding:20px}
+.contact-box{padding:28px 18px}
+.lightbox-close{top:10px;right:18px;font-size:40px}
+}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<nav class="navbar">
+<a href="#home" class="logo">AnisaKaila</a>
+<ul class="nav-links">
+<li><a href="#home" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Hi, I'm <span class="highlight">Anisa Kaila Najmi Fadilah</span></h1>
+
+<p class="description">
+Saya merupakan siswi SMKN 1 Kawali jurusan Rekayasa Perangkat Lunak (RPL).
+Memiliki ketertarikan pada bidang pengembangan website, pembuatan aplikasi
+berbasis web, serta perancangan antarmuka pengguna. Saya berkomitmen untuk
+terus mengembangkan kemampuan di bidang teknologi informasi.
+</p>
+</div>
+
+<div class="hero-image">
+<div class="image-circle">
+<img src="images/foto.png" alt="Foto Anisa Kaila Najmi Fadilah">
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+<div class="about-intro">
+<h1>About Me</h1>
+</div>
+
+<div class="about-card">
+<div class="about-left">
+<img src="images/foto.png" alt="Foto Anisa Kaila Najmi Fadilah">
+</div>
+
+<div class="about-right">
+<h2>Tentang Saya</h2>
+
+<p>
+Saya merupakan siswi SMKN 1 Kawali jurusan Rekayasa Perangkat Lunak (RPL).
+Memiliki pengetahuan dasar dalam HTML, CSS, JavaScript, PHP, MySQL, Laravel,
+dan UI/UX Design. Memiliki ketertarikan pada bidang pengembangan website,
+pembuatan aplikasi berbasis web, serta perancangan antarmuka pengguna.
+Berkomitmen untuk terus mengembangkan kemampuan dan memperluas pengetahuan
+di bidang teknologi informasi.
+</p>
+
+<h2 class="experience-title">Pendidikan</h2>
+<div class="experience-columns">
+<div class="experience-column">
+<h3>SMKN 1 Kawali</h3>
+<p>2024 – 2027</p>
+</div>
+</div>
+
+<h2 class="experience-title">Alamat</h2>
+<div class="experience-columns">
+<div class="experience-column address-about">
+<p>Banjarwaru, Panjalu, Kabupaten Ciamis, Jawa Barat</p>
+</div>
+</div>
+
+<h2 class="experience-title">Sertifikasi &amp; Lisensi</h2>
+<div class="experience-columns">
+<div class="experience-column">
+<p>Sertifikat Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak</p>
+</div>
+</div>
+
+<h2 class="experience-title">Minat Bidang</h2>
+<div class="experience-columns">
+<div class="experience-column">
+<ul class="bullet-list">
+<li>Pengembangan website</li>
+<li>Pembuatan aplikasi berbasis web</li>
+<li>Desain UI/UX</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SKILLS -->
+<div class="skills-section" id="skills">
+<div class="skills-heading">
+<h2>Skills</h2>
+</div>
+
+<h3>Hard Skills</h3>
+<div class="skills-list">
+<div class="skill-row"><div class="skill-number">01</div><div class="skill-info"><h3>HTML</h3></div></div>
+<div class="skill-row"><div class="skill-number">02</div><div class="skill-info"><h3>CSS</h3></div></div>
+<div class="skill-row"><div class="skill-number">03</div><div class="skill-info"><h3>JavaScript</h3></div></div>
+<div class="skill-row"><div class="skill-number">04</div><div class="skill-info"><h3>PHP</h3></div></div>
+<div class="skill-row"><div class="skill-number">05</div><div class="skill-info"><h3>MySQL</h3></div></div>
+<div class="skill-row"><div class="skill-number">06</div><div class="skill-info"><h3>Laravel</h3></div></div>
+<div class="skill-row"><div class="skill-number">07</div><div class="skill-info"><h3>UI/UX Design</h3></div></div>
+</div>
+
+<h3>Soft Skills</h3>
+<div class="skills-list">
+<div class="skill-row"><div class="skill-number">01</div><div class="skill-info"><h3>Komunikasi</h3></div></div>
+<div class="skill-row"><div class="skill-number">02</div><div class="skill-info"><h3>Kerja Sama Tim</h3></div></div>
+<div class="skill-row"><div class="skill-number">03</div><div class="skill-info"><h3>Manajemen Waktu</h3></div></div>
+<div class="skill-row"><div class="skill-number">04</div><div class="skill-info"><h3>Beradaptasi</h3></div></div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="page-section projects-section" id="projects">
+<div class="section-heading">
+<h1>Projects</h1>
+<p class="description">Beberapa pengalaman project website yang pernah saya kerjakan.</p>
+</div>
+
+<div class="project-container">
+
+<div class="project-card">
+<div class="project-image">
+<img src="images/Perpustakan.png" alt="Sistem Informasi Perpustakaan" onclick="openLightbox(this)">
+</div>
+<h2>Sistem Informasi Perpustakaan</h2>
+<p class="year">2026</p>
+<ul class="bullet-list">
+<li>Mengembangkan website untuk mendukung pengelolaan administrasi perpustakaan.</li>
+<li>Mengelola data anggota, koleksi buku, peminjaman, dan pengembalian buku.</li>
+<li>Menyediakan fitur pencatatan transaksi serta pemantauan status peminjaman buku.</li>
+<li>Merancang tampilan dan alur sistem agar pengelolaan data perpustakaan lebih terstruktur dan efisien.</li>
+</ul>
+</div>
+
+<div class="project-card">
+<div class="project-image">
+<img src="images/perusahaan.png" alt="Website Company Profile" onclick="openLightbox(this)">
+</div>
+<h2>Web Company Profile</h2>
+<p class="year">2026</p>
+<ul class="bullet-list">
+<li>Mengembangkan website untuk memperkenalkan identitas dan profil perusahaan.</li>
+<li>Menampilkan informasi visi, misi, sejarah, produk, layanan, dan kontak perusahaan.</li>
+<li>Mengelola konten website agar informasi perusahaan tersaji secara terstruktur dan profesional.</li>
+</ul>
+</div>
+
+<div class="project-card">
+<div class="project-image">
+<img src="images/cafe.png" alt="Website Cafe" onclick="openLightbox(this)">
+</div>
+<h2>Web Cafe</h2>
+<p class="year">2025</p>
+<ul class="bullet-list">
+<li>Mengembangkan website untuk memperkenalkan profil dan identitas cafe.</li>
+<li>Menampilkan daftar menu makanan dan minuman, harga, serta informasi cafe.</li>
+<li>Merancang tampilan website yang menarik dan responsif untuk memudahkan pengunjung melihat pilihan menu.</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="page-section contact-section" id="contact">
+<div class="section-heading">
+<h1>Contact Me</h1>
+<p class="description">Hubungi saya melalui informasi berikut.</p>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-box">
+<h3>WhatsApp</h3>
+<p>0855-2474-9015</p>
+<a href="https://wa.me/6285524749015" target="_blank" rel="noopener noreferrer" class="contact-action">Send Message</a>
+</div>
+
+<div class="contact-box">
+<h3>Email</h3>
+<p>anisakaila.id1122@gmail.com</p>
+<a href="mailto:anisakaila.id1122@gmail.com" class="contact-action">Send Email</a>
+</div>
+
+</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="photo-lightbox" id="photoLightbox" onclick="closeLightbox(event)">
+<button type="button" class="lightbox-close" aria-label="Tutup foto" onclick="closeLightbox(event)">&times;</button>
+<img src="" alt="Foto proyek ukuran besar" id="lightboxImage">
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2026 Anisa Kaila Najmi Fadilah. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+const header=document.querySelector("header");
+const navLinks=document.querySelectorAll(".nav-links a");
+
+const sections=["home","about","projects","contact"]
+.map(id=>document.getElementById(id))
+.filter(Boolean);
+
+function updateActiveNavbar(){
+
+const headerHeight=header?header.getBoundingClientRect().height:0;
+const marker=headerHeight+80;
+let activeId="home";
+
+sections.forEach(section=>{
+if(section.getBoundingClientRect().top<=marker){
+activeId=section.id;
+}
+});
+
+const scrollPosition=window.scrollY+window.innerHeight;
+const pageHeight=document.documentElement.scrollHeight;
+
+if(scrollPosition>=pageHeight-5){
+activeId="contact";
+}
+
+navLinks.forEach(link=>{
+const isActive=link.getAttribute("href")==="#"+activeId;
+
+link.classList.toggle("active",isActive);
+
+if(isActive){
+link.setAttribute("aria-current","location");
+}else{
+link.removeAttribute("aria-current");
+}
+});
+
+const newHash="#"+activeId;
+
+if(window.location.hash!==newHash){
+history.replaceState(
+null,
+"",
+window.location.pathname+window.location.search+newHash
+);
+}
+}
+
+let ticking=false;
+
+window.addEventListener("scroll",function(){
+
+if(!ticking){
+
+window.requestAnimationFrame(function(){
+updateActiveNavbar();
+ticking=false;
+});
+
+ticking=true;
+}
+
+},{passive:true});
+
+window.addEventListener("resize",updateActiveNavbar);
+window.addEventListener("load",updateActiveNavbar);
+
+navLinks.forEach(link=>{
+
+link.addEventListener("click",function(event){
+
+event.preventDefault();
+
+const targetId=this.getAttribute("href");
+const target=document.querySelector(targetId);
+
+if(!target)return;
+
+const headerHeight=header?header.getBoundingClientRect().height:0;
+
+const targetPosition=
+target.getBoundingClientRect().top+
+window.scrollY-
+headerHeight;
+
+window.scrollTo({
+top:targetPosition,
+behavior:"smooth"
+});
+
+history.replaceState(
+null,
+"",
+window.location.pathname+window.location.search+targetId
+);
+
+});
+
+});
+
+updateActiveNavbar();
+
+});
+
+window.openLightbox=function(image){
+
+const lightbox=document.getElementById("photoLightbox");
+const lightboxImage=document.getElementById("lightboxImage");
+
+lightboxImage.src=image.src;
+lightboxImage.alt=image.alt;
+
+lightbox.classList.add("show");
+document.body.style.overflow="hidden";
+
+};
+
+window.closeLightbox=function(event){
+
+const lightbox=document.getElementById("photoLightbox");
+const lightboxImage=document.getElementById("lightboxImage");
+
+if(event&&event.target===lightboxImage)return;
+
+lightbox.classList.remove("show");
+lightboxImage.src="";
+document.body.style.overflow="";
+
+};
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+
+const lightbox=document.getElementById("photoLightbox");
+
+lightbox.classList.remove("show");
+
+document.getElementById("lightboxImage").src="";
+
+document.body.style.overflow="";
+
+}
+
+});
+</script>
+
+</body>
+</html>
